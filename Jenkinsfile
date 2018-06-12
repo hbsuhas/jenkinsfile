@@ -4,24 +4,24 @@ node {
 
     try {
         stage ('Clone') {
-        	checkout scm
+        	bat "echo 'checkout scm'"
         }
         stage ('Build') {
-        	batch "echo 'shell scripts to build project...'"
+        	bat "echo 'shell scripts to build project...'"
         }
         stage ('Tests') {
 	        parallel 'static': {
-	            batch "echo 'shell scripts to run static tests...'"
+	            bat "echo 'shell scripts to run static tests...'"
 	        },
 	        'unit': {
-	            batch "echo 'shell scripts to run unit tests...'"
+	            bat "echo 'shell scripts to run unit tests...'"
 	        },
 	        'integration': {
-	            batch "echo 'shell scripts to run integration tests...'"
+	            bat "echo 'shell scripts to run integration tests...'"
 	        }
         }
       	stage ('Deploy') {
-            batch "echo 'shell scripts to deploy to server...'"
+            bat "echo 'shell scripts to deploy to server...'"
       	}
     } catch (err) {
         currentBuild.result = 'FAILED'

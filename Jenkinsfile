@@ -4,7 +4,8 @@ node {
 
     try {
         stage ('Clone') {
-        	bat "echo 'checkout scm'"
+		
+        	bat "echo 'checkout scm' for properties %prop_id% "
         }
         stage ('Build') {
         	bat "echo 'shell scripts to build project...'"

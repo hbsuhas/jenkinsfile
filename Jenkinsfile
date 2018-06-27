@@ -11,7 +11,14 @@ node {
 	
 						try {
 								def id =0;
-								if(isUnix()){id = $prop_id}else{id =%prop_id%}
+								 if(isUnix())
+								{
+									id = $prop_id
+								}
+								else
+								{
+									id =%prop_id%
+								}
 								
 							 def connectionProp = new URL(baseUrl+"v_jenkins_properties/"+id+"?column=ID")
                                     .openConnection() as HttpURLConnection

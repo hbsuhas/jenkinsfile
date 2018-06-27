@@ -17,7 +17,7 @@ node {
 								}
 								else
 								{
-									id =%prop_id%
+									id =prop_id
 								}
 								
 							 def connectionProp = new URL(baseUrl+"v_jenkins_properties/"+id+"?column=ID")
